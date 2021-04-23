@@ -49,6 +49,8 @@ let showCard = function(){
 }
 
 let storeItem = function(){
+    console.log(inputTitle.value);
+    if(inputTitle.value!="" || noteDescription.value!=""){
     if(localStorage.length == 0){
         title = []
         description = []
@@ -70,6 +72,7 @@ let storeItem = function(){
     pinitems.innerHTML = "<h4>Pin Item</h4>";
     nonPinItem.innerHTML = "<h4>Others</h4>";
     showCard();
+}
 }
 
 closetitlebtn.addEventListener("click",function(){

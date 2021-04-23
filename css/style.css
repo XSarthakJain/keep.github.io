@@ -18,17 +18,16 @@ header a{
     color:gray;
     font-size: x-large;
     text-decoration: none;
-    display: flex;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     padding-left:8px;
 }
 .search{
+    width:80%;
+    display: inline-block;
     position: relative;
-    width:100%;
-    height:100%;
     justify-content: center;
-    
     text-align: center;
 }
 input[type=search]{
@@ -188,6 +187,9 @@ input[name=description]{
 @media(max-width:600px){
     input[type=search]{
         width:90%;
+    }
+    .search{
+        width:60%;
     }
     .searchIcon{
         left:8%;
