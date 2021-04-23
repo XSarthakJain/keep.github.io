@@ -162,6 +162,29 @@ input[name=description]{
     right:10px;
 }
 
+.SkatchCloseIcon{
+    float:right;
+    display: block;
+}
+
+.popupTitle p{
+    text-align: left;
+    padding:8px;
+    width:90%;
+    font-size:larger;
+    display: inline-block;
+}
+
+.popupTitle span{
+    padding-top:12px;
+}
+#popupInputDescription{
+    color:gray;
+    float:left;
+    max-height:50vh;
+    overflow-y:auto;
+}
+
 @media(max-width:600px){
     input[type=search]{
         width:90%;

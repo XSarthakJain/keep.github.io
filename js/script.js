@@ -6,6 +6,9 @@ let nonPinItem = document.querySelector(".nonPinItem");
 let inputTitle = document.getElementById("inputTitle");
 let pin = document.getElementsByClassName("pin");
 let deleteNote = document.getElementsByClassName("deletenote");
+
+
+
 pin[0].addEventListener("click",function(e){
     if(pin[0].id == "pined"){
         pin[0].removeAttribute("id","pined");    
@@ -29,10 +32,11 @@ let showCard = function(){
     pinItem = JSON.parse(localStorage.getItem("pin"));
     for(i=0;i<pinItem.length;i++){
         let div = document.createElement("div");
+        div.setAttribute("popup-target","popUp2");
         let span = document.createElement("span");
-        span.className="material-icons deletenote";
+        span.className ="material-icons deletenote";
         span.innerText = "delete";
-        div.className = `boxItem delete${i}`;
+        div.className = `boxItem delete${i} open-popup-btn`;
         div.innerHTML = `<h4>${title[i]}</h4><p>${description[i]}<p>`;
         div.append(span);
         if(pinItem[i]){
@@ -120,7 +124,20 @@ Array.from(document.getElementsByClassName("deletenote")).forEach(function(eleme
 })
 })
 
+// OpenPopup
+openPopup = document.getElementsByClassName("open-popup-btn");
+popupTitle = document.getElementById("popupInputTitle");
+popupInputDescription = document.getElementById("popupInputDescription");
+popupPin = document.getElementById("popupPin");
+Array.from(openPopup).forEach(function(element){
+    element.addEventListener("click",function(){
+        popupTitle.innerText = element.firstElementChild.innerText;
+        popupInputDescription.innerText = element.firstElementChild.nextElementSibling.innerText;
+        document.getElementById(element.getAttribute('popup-target')).classList.add("SkatchPopupactive");
+        element.parentNode.className=="pinItem"?popupPin.style.color="orange":popupPin.style.color="gray";
 
+    })
+})
 
 
 
