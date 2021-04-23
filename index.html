@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="StyleSheet" href="css/style.css">
 </head>
-<body>
+<body style="overflow-x: hidden;">
     <!-- Header -->
     <header>
         <img src="img/keep_logo.png">
@@ -23,8 +23,29 @@
     <!-- Main Content -->
     <div>
         <div id="typenote">
-        <input type="text" placeholder="Take a note">
+        <div>
+        <section class="titleSection">
+        <input type="text" name="title" placeholder="Title" id="inputTitle">   
+        <span class="material-icons pin">
+            push_pin
+        </span>
+        </section>
+        <input type="text" name="description" id="description" placeholder="Take a note.....">
+        <button class="titleSection">close</button>
+        </div>
+        
+        </div>
+
+        <!-- create box -->
+        <div class="outerItem">
+            <div class="pinItem">
+                <h4>Pin Item</h4>
+            </div><br clear="all">
+            <div class="nonPinItem">
+                <h4>Others</h4>
+            </div>
         </div>
     </div>
 </body>
+<script src="js/script.js"></script>
 </html>

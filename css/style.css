@@ -3,6 +3,9 @@
     padding:0;
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden !important;
+}
 header{
     display: flex;
     padding:12px;
@@ -51,18 +54,113 @@ header + div{
 }
 #typenote{
     text-align: center;
+    width:100%;
+}
+.pin{
+    color:gray;
+    cursor: pointer;
+}
+
+#pined{
+    color:orange;
 }
 
 #typenote input[type=text]{
-    width:50%;
-    padding:16px;
+    background-color: transparent;
+    width:90%;
+    padding:16px 0;
     border-radius: 8px;
-    padding-left: 12px;
     border:none;
-    box-shadow: 2px 2px 5px 2px rgb(172, 169, 169);
+    outline: none;
+    text-align: left;
+    font-weight:550;
+    color:#E9ECEF;
+}
+
+input[name=title]{
+    font-size: medium;
+    letter-spacing: 1.5px;
+
+}
+.titleSection{
+    display:none;
+}
+
+button.titleSection{
+    border:none;
+    background-color: transparent;
+    font-size: medium;
+    float: right;
+    color:gray;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin:8px;
+    border-radius:5px;
     outline: none;
 }
 
+button.titleSection:hover{
+    background-color: #E9ECEF;
+}
+
+.titleShow{
+    display:block;
+}
+
+input[name=description]{
+    width:100%;
+}
+#typenote div:first-child{
+    display: inline-block;
+    box-shadow: 2px 2px 5px 2px rgb(172, 169, 169);
+    width:50%;
+    border-radius: 8px;
+    padding-left: 12px;
+    border:none;
+    outline: none;
+}
+
+
+
+.pinItem,.nonPinItem{
+    padding-left:16px;
+    padding-right: 16px;
+    justify-content: center;
+    margin:2%
+}
+.pinItem h4,.nonPinItem h4{
+    color:gray;
+    font-size: small;
+    padding:16px;
+}
+
+.boxItem{
+    float:left;
+    width:250px;
+    height:150px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px 4px #E9ECEF;
+    margin:8px;
+    overflow:hidden;
+    position: relative;
+}
+
+.boxItem h4{
+    font-size:24px;
+    font-weight: 100;
+    padding:12px;
+}
+
+.boxItem p{
+    padding:12px;
+    color:black;
+}
+
+.deletenote{
+    position: absolute;
+    bottom:10px;
+    right:10px;
+}
 
 @media(max-width:600px){
     input[type=search]{
@@ -71,7 +169,7 @@ header + div{
     .searchIcon{
         left:8%;
     }
-    #typenote input[type=text]{
-        width:90%;
+    #typenote div:first-child{
+        width:80%;
     }
 }
