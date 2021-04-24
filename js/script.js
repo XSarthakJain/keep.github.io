@@ -28,6 +28,7 @@ noteDescription.addEventListener("click",function(){
 
 let showCard = function(){
     title = JSON.parse(window.localStorage.getItem("title"));
+    if(title!=null){
     description = JSON.parse(window.localStorage.getItem("description"));
     pinItem = JSON.parse(localStorage.getItem("pin"));
     for(i=0;i<pinItem.length;i++){
@@ -45,7 +46,7 @@ let showCard = function(){
         else{
             nonPinItem.append(div);
         }
-    }
+    }}
 }
 
 let storeItem = function(){
@@ -154,6 +155,8 @@ searchBarInputBox.addEventListener("input",function(element){
             }
        });
 })
+
+
 
 
 
