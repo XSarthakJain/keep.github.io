@@ -6,7 +6,7 @@ let nonPinItem = document.querySelector(".nonPinItem");
 let inputTitle = document.getElementById("inputTitle");
 let pin = document.getElementsByClassName("pin");
 let deleteNote = document.getElementsByClassName("deletenote");
-
+let searchBarInputBox = document.getElementById("searchBarInputBox");
 
 
 pin[0].addEventListener("click",function(e){
@@ -16,7 +16,7 @@ pin[0].addEventListener("click",function(e){
     else{
         pin[0].setAttribute("id","pined");
     }
-    console.log(pin[0].getAttribute("id"));
+    
 });
 
 noteDescription.addEventListener("click",function(){
@@ -49,7 +49,6 @@ let showCard = function(){
 }
 
 let storeItem = function(){
-    console.log(inputTitle.value);
     if(inputTitle.value!="" || noteDescription.value!=""){
     if(localStorage.length == 0){
         title = []
@@ -86,7 +85,6 @@ storeItem();
 Array.from(document.getElementsByClassName("deletenote")).forEach(function(element,index){
     element.addEventListener("click",function(){
     let deletNodeClass = element.parentNode.classList[1].slice(6,);
-    console.log(deletNodeClass);
     let localTitle = JSON.parse(localStorage.getItem("title"));
     let localDescription = JSON.parse(localStorage.getItem("description"));
     let localPin = JSON.parse(localStorage.getItem("pin"));
@@ -111,7 +109,6 @@ showCard();
 Array.from(document.getElementsByClassName("deletenote")).forEach(function(element,index){
     element.addEventListener("click",function(){
     let deletNodeClass = element.parentNode.classList[1].slice(6,);
-    console.log(deletNodeClass);
     let localTitle = JSON.parse(localStorage.getItem("title"));
     let localDescription = JSON.parse(localStorage.getItem("description"));
     let localPin = JSON.parse(localStorage.getItem("pin"));
@@ -140,6 +137,19 @@ Array.from(openPopup).forEach(function(element){
         element.parentNode.className=="pinItem"?popupPin.style.color="orange":popupPin.style.color="gray";
 
     })
+})
+
+// // Search 
+boxItem = document.getElementsByClassName("boxItem");
+searchBarInputBox.addEventListener("input",function(element){
+       Array.from(boxItem).forEach(function(element){
+            if((element.getElementsByTagName("h4")[0].innerText.toLowerCase()).includes(searchBarInputBox.value.toLowerCase())){
+                element.style.display = "block";
+            }
+            else{
+                element.style.display = "none";
+            }
+       });
 })
 
 
