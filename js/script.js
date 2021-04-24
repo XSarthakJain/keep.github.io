@@ -70,6 +70,8 @@ let storeItem = function(){
 
     pinitems.innerHTML = "<h4>Pin Item</h4>";
     nonPinItem.innerHTML = "<h4>Others</h4>";
+    inputTitle.value = "";
+    noteDescription.value = "";
     showCard();
 }
 }
@@ -130,6 +132,7 @@ popupTitle = document.getElementById("popupInputTitle");
 popupInputDescription = document.getElementById("popupInputDescription");
 popupPin = document.getElementById("popupPin");
 Array.from(openPopup).forEach(function(element){
+    console.log("i am on");
     element.addEventListener("click",function(){
         popupTitle.innerText = element.firstElementChild.innerText;
         popupInputDescription.innerText = element.firstElementChild.nextElementSibling.innerText;

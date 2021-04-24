@@ -7,6 +7,7 @@
     <title>Keep</title>
     <link rel="StyleSheet"  href="https://cdn.jsdelivr.net/gh/xsarthakjain/skatch.github.io/dist/css/skatch.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/keep.ico">
     <link rel="StyleSheet" href="css/style.css">
 </head>
 <body style="overflow-x: hidden;">
@@ -15,7 +16,7 @@
         <img src="img/keep_logo.png">
         <a href="#">Keep</a>
         <div class="search">
-        <input type="search" name="search" placeholder="search" id="searchBarInputBox">
+        <input type="search" name="search" placeholder="search" id="searchBarInputBox" autocomplete="off">
         <span class="material-icons searchIcon">
         search
         </span>
@@ -26,12 +27,12 @@
         <div id="typenote">
         <div>
         <section class="titleSection">
-        <input type="text" name="title" placeholder="Title" id="inputTitle">   
+        <input type="search" name="title" placeholder="Title" id="inputTitle" autocomplete="off">   
         <span class="material-icons pin">
             push_pin
         </span>
         </section>
-        <input type="text" name="description" id="description" placeholder="Take a note.....">
+        <input type="search" name="description" id="description" placeholder="Take a note....." autocomplete="off">
         <button class="titleSection">close</button>
         </div>
         
@@ -45,7 +46,7 @@
             <div class="nonPinItem">
                 <h4>Others</h4>
             </div>
-            <div class="searchPlace"></div>
+            
         </div>
     </div>
 

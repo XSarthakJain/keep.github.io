@@ -44,7 +44,7 @@ input[type=search]{
     position: absolute;
     text-align: center;
     left:26%;
-    top:12px;
+    top:16px;
     color:gray;
 }
 
@@ -64,7 +64,7 @@ header + div{
     color:orange;
 }
 
-#typenote input[type=text]{
+#typenote input[type=search]{
     background-color: transparent;
     width:90%;
     padding:16px 0;
@@ -73,7 +73,7 @@ header + div{
     outline: none;
     text-align: left;
     font-weight:550;
-    color:#E9ECEF;
+    color:gray;
 }
 
 input[name=title]{
@@ -157,8 +157,19 @@ input[name=description]{
 
 .deletenote{
     position: absolute;
-    bottom:10px;
-    right:10px;
+    bottom:0;
+    right:0;
+    left:0;
+    width:100%;
+    background-color: #ffff;
+    height:25px;
+    text-align: right;
+    display:none;
+    cursor: pointer;
+}
+
+.boxItem:hover .deletenote{
+    display:block;
 }
 
 .SkatchCloseIcon{
